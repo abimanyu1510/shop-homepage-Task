@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 function App() {
   let data=[{
    
-    sale:"false",
+    sale:false,
     item:"Fancy Item",
     reviews:false,
     amount:"$40.00-$80.00",
@@ -17,7 +17,7 @@ function App() {
   },
   {
     
-    sale:"true",
+    sale:true,
     item:"Special Item",
     reviews:true,
     amount:"$18.00" ,
@@ -25,7 +25,7 @@ function App() {
    image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk6r8fsR_j7DKGfZD7yL1MLuup-yeWD7i_Uw&usqp=CAU"},
   {
     
-    sale:"true",
+    sale:true,
     item:"sales Item",
     reviews:false,
     amount:"$25.00",
@@ -35,7 +35,7 @@ function App() {
   },
   {
     
-    sale:"false",
+    sale:false,
     item:"Popular Item",
     reviews:true,
     originalPrice:"",
@@ -45,7 +45,7 @@ function App() {
   },
   {
    
-    sale:"true",
+    sale:true,
     item:"sales Item",
     reviews:false,
     originalPrice:"$50.00",
@@ -55,7 +55,7 @@ function App() {
   },
   {
    
-    sale:"false",
+    sale:false,
     item:"Fancy Product",
     reviews:false,
     amount:"$120.00-$280.00" ,
@@ -65,7 +65,7 @@ function App() {
   },
   {
    
-    sale:"true",
+    sale:true,
     item:"Special Item",
     reviews:true,
     originalPrice:"$20.00",
@@ -75,7 +75,7 @@ function App() {
   },
   {
     
-    sale:"false",
+    sale:false,
     item:"Popular Item",
     reviews:true,
     originalPrice:"",
@@ -85,20 +85,20 @@ function App() {
   },
 
 ]
-  let[cart,serCart]=useState(0)
+  let[cart,setCart]=useState(0)
   return <>
-  <TopBar cart={cart} serCart={serCart}/>
-<Header cart={cart} serCart={serCart} />
+  <TopBar cart={cart} setCart={setCart}/>
+<Header cart={cart} setCart={setCart} />
   <section className="py-5">
             <div className="container px-4 px-lg-5 mt-5">
                 <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {data.map((data,i)=>{
-                 return <Card data={data} key={i} cart={cart} serCart={serCart} />
+                 return <Card data={data} key={i} cart={cart} setCart={setCart} />
 })}
             </div>
                 </div>
   </section>
-<Footer cart={cart} serCart={serCart} />
+<Footer cart={cart} setCart={setCart} />
 </>
 }
 export default App
